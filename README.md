@@ -129,3 +129,164 @@ Sui, D. and Elwood, S., 2013. Crowdsourcing geographic knowledge. 1st ed. Dordre
 The Smart Citizen Kit: Crowdsourced Environmental Monitoring. 2014. [online] Kickstarter. Available at: <https://www.kickstarter.com/projects/acrobotic/the-smart-citizen-kit-crowdsourced-environmental-m> [Accessed 17 Apr. 2014].
 			
 Wath, S., Dutt, P. and Chakrabarti, T., 2011. E-waste scenario in India, its management and implications. Environmental monitoring and assessment, 172(1-4), pp.249--262.
+
+### Appendix A - Circuit Diagrams
+
+![alt text](img/13.png)
+
+![alt text](img/14.png)
+
+### Appandix B - Code Examples
+
+Note: The Energia IDE for MSP430 is built directly upon the Arduino code base, and therefore is almost 1 to 1 compatible with any Arduino code.
+
+
+The MSP430 Launchpad has a tendency to spam the serial port. This simple work-around prevents the program from running until the user presses a button on P1_3 -- when the computer is ready to listen for serial data.
+
+```processing
+	void setup() {
+  	pinMode(P1_3, INPUT_PULLUP);
+  	delay(50);
+  	while (digitalRead(P1_3) == HIGH) delay(10); 
+  	// initialize serial communication at 9600 bits per second:
+  	Serial.begin(9600); // msp430g2231 must use 4800
+	}
+ 	
+	// the loop routine runs over and over again forever:
+	void loop() {
+	  	Serial.println("TEST!");
+      	delay(1); // delay in between reads for stability
+	}
+```
+
+Nearly identical energia sketches were used to read serial data in each of the tests. The following is the general sketch used (note that it is adapted directly from the arduino AnalogSerial sketch.
+
+```
+void setup() {
+// The magical serial fix
+pinMode(P1_3, INPUT_PULLUP);
+delay(50);
+ while (digitalRead(P1_3) == HIGH) delay(10); 
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.println(sensorValue);
+  delay(1000); Write sensor value every second
+}
+```
+
+The code to read from the internal thermometer (shamelessly borrowed from https://github.com/energia/Energia/blob/master/examples/3.Analog/AnalogInput_InternalThermometer_430/AnalogInput_InternalThermometer_430.ino)
+```
+//
+// AnalogInput_InternalThermometer_430
+// Analog Input - MSP430 Internal Thermometer
+//
+// Demonstrates analog input by reading the internal temperature sensor.
+//
+// Created by Robert Wessels
+// modified 7 March 2012
+// By Robert Wessels
+//
+// This example code is in the public domain.
+//
+// Revision:
+//   Rei VILO, Mar 12, 2012 - One decimal place
+//   Rei VILO, Mar 13, 2012 - More precise algorithm
+//   Rei VILO, Mar 14, 2012 - Average
+//   Rei VILO, May 21, 2012 - Updated with GREEN_LED, RED_LED and PUSH2
+//   Rei VILO, Sep 09, 2012 - TimerSerial.h no longer required
+//   Rei VILO, Sep 24, 2012 - FraunchPad excluded
+//   Press push 2 to end
+//   Tested on msp430g2452 and msp430g2553
+//   2196 bytes
+
+#if defined(__MSP430G2452__) || defined(__MSP430G2553__) || defined(__MSP430G2231__)
+#else
+#error Board not supported
+#endif
+
+// RED_LED, GREEN_LED, TEMPSENSOR, PUSH2 already defined
+#define NUMBER 4 // take number / 2
+
+int ledState = HIGH;
+uint8_t i = 0;
+uint32_t average = 0;
+uint32_t values[NUMBER];
+uint8_t j = 0;
+boolean flag = false;
+
+
+void setup() {
+  pinMode(RED_LED, OUTPUT);
+  pinMode(GREEN_LED, OUTPUT);
+  analogReference(INTERNAL1V5);
+  analogRead(TEMPSENSOR); // first reading usually wrong
+
+  Serial.begin(9600);
+  pinMode(PUSH2, INPUT_PULLUP);  
+
+  digitalWrite(RED_LED, HIGH);
+  digitalWrite(GREEN_LED, LOW);
+
+
+  Serial.print("\n\n\n*** MSP430 Thermometer \n");
+  Serial.print("Press PUSH2 to end\n");
+  Serial.print("instant\taverage\n");
+
+  for (j=0; j<NUMBER; j++) values[j]=0;
+  average = 0;
+  j=0;
+}
+
+void printDec(uint32_t ui) {
+  Serial.print(ui/10, DEC);
+  Serial.print(".");
+  Serial.print(ui%10, DEC);
+}
+
+
+void loop() {
+  ledState = !ledState;
+
+  // LEDs: green = ready; red = acquisition
+  digitalWrite(flag ? GREEN_LED : RED_LED, ledState);
+
+  if (i == 10) {
+    i = 0;
+
+    // Formula: http://www.43oh.com/forum/viewtopic.php?p=18248#p18248
+    average -= values[j];
+    values[j] = ((uint32_t)analogRead(TEMPSENSOR)*27069 - 18169625) *10 >> 16;
+    average += values[j];
+
+    // Print measure
+    printDec(values[j]);
+    Serial.print("\t");
+
+    // Print average
+    if (flag) printDec(average/NUMBER);
+    Serial.print("\n");
+
+    j++;
+    if (j==NUMBER) flag=true;
+    j %= NUMBER;
+  }
+
+  if (digitalRead(PUSH2)==LOW) {
+    Serial.print("\n\n*** End \n");
+    Serial.end();
+    while(true); // endless loop
+  }
+  delay(100);
+
+  i++;
+}
+```
+
+
