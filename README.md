@@ -161,7 +161,7 @@ The MSP430 Launchpad has a tendency to spam the serial port. This simple work-ar
 
 Nearly identical energia sketches were used to read serial data in each of the tests. The following is the general sketch used (note that it is adapted directly from the arduino AnalogSerial sketch.
 
-```
+```processing
 void setup() {
 // The magical serial fix
 pinMode(P1_3, INPUT_PULLUP);
@@ -182,7 +182,8 @@ void loop() {
 ```
 
 The code to read from the internal thermometer (shamelessly borrowed from https://github.com/energia/Energia/blob/master/examples/3.Analog/AnalogInput_InternalThermometer_430/AnalogInput_InternalThermometer_430.ino)
-```
+
+```processing
 //
 // AnalogInput_InternalThermometer_430
 // Analog Input - MSP430 Internal Thermometer
