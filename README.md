@@ -1,5 +1,10 @@
-# e-waste-sensing
-Repository for e-waste sensor build
+# E-Waste Sensing
+
+```
+The following is a paper that I wrote for my CS 807 class at the University of Regina. 
+```
+
+
 
 ## Abstract
 
