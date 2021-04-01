@@ -63,13 +63,28 @@ was found with an R^2 of 0.97.
 #### Temperature Sensor
 The MSP430G2553 microcontroller unit which serves as the “brain” of this project contains an internal temperature sensor that can be easily read via either a serial connection or an attached display. These chips are very common both in industrial applications and in commercial ones such as children’s toys. (Four-Three-Oh!, 2012) Before attempting to utilize the internal temperature sensor “in production”, however, an exact idea of how accurate it is must be determined. 
 
+![alt text](img/8.png)
+
+
 The procedure for cross-checking the temperature was simple -- a digital house thermometer was placed next to the MSP430 Launchpad Development board (which was in-turn connected via serial-over-USB to a computer where the temperature was read out. Randomly over a week the temperatures read by both devices was recorded and compared. 
 The results were quite acceptable. Over 30 samples recorded during the week, the average percent error was approximately 2.4%. Although this is certainly not lab-quality scientific accuracy, as a makeshift environmental sensor, this small bit of seemingly systematic error is quite acceptable. 
 
 #### Soil Moisture Sensor
+
+![alt text](img/8.png)
+
 To determine the moisture of soil, a pair of galvanized nails are soldered to a pair of wires with one lead connected to +3V and the other connected to a 10K pull-down resistor and to an analog input on the MSP430. The simple idea behind this set-up is that as moisture is added to the soil it becomes more conductive and thus there becomes less and less resistance between the sensor nail and the voltage source nail. To test this a sample of ¾ cup of potting soil was placed in a cup with the nails spaced a few centimeters apart and water was added in ⅛ cup increments until the soil was completely saturated with water. The values were recorded over the serial port and plotted to examine what constitutes “under watering” and “over watering”. It was found that in completely dry soil, the reading is nearly zero. Once the first ⅛ cup of water is added, that value changes quickly to be around 600. Another ⅛ cup brings the value up to a little over 650, and it appears to max out at around 700 -- whereby the soil is completely saturated with water. 
 
+![alt text](img/9.png)
+
+
 ### Demonstrator Build
+
+![alt text](img/10.png)
+
+![alt text](img/11.png)
+
+
 With the sensors (mostly) working, a final build to enclose the sensors was constructed. The components were removed from the breadboard and soldered directly to a small prototyping PCB. A recycled pill-bottle was chosen as a housing -- and a 3V coin-cell battery installed. Holes for the moisture sensor probes and the light sensor were drilled on the bottom and top, respectively. Hot-glue served to water-tighten the ports for the sensors. While it is yet to be tested, the final build is meant to be water-tight and weather worthy with the ability to survive an entire season in a field or garden.  After such a time, the capsule can be extracted and the chip removed from the device. The data periodically stored to the non-volatile flash memory within the MSP430 can then be collected and interpreted. (See Appendix A for complete schematic) It is intended that the final product will fall within the “first level” of citizen science involvement, allowing volunteers to passively collect data (literally burying the equipment in the ground and forgetting about it) without needing to concern themselves with the broader work. 
 
 ### Reflective Project Summary / Future Work
