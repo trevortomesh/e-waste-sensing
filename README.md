@@ -69,3 +69,27 @@ In this paper, a sensor system constructed entirely of electronic waste was prop
 ### Conclusion
 To re-iterate, environmental sensing is an essential part of ecology and agriculture -- now, more than ever. As we as a species endeavor to conquer some of the most difficult trials and challenges we have ever faced-- climate change, overpopulation, food shortages and general ecological distress -- it is vital that the “common” man embrace the idea that they too can contribute to securing our future. Let us provide them with the tools. 
 
+### References			
+Adafruit Industries. 2014. [online] Adafruit.com. Available at: <http://www.adafruit.com/search?q=light+sensor> [Accessed 17 Apr. 2014].
+			
+Danielsen, F., Burgess, N., Jensen, P. and Pirhofer-Walzl, K., 2010. Environmental monitoring: the scale and speed of implementation varies according to the degree of peoples involvement. Journal of Applied Ecology, 47(6), pp.1166--1168.
+			
+Four-Three-Oh!. 2012. [online] 43oh.com. Available at: <http://43oh.com/2012/03/winner-products-using-the-msp430/> [Accessed 17 Apr. 2014].
+			
+Frueh, A., 2014. GardenBot - open source garden automation project. [online] Gardenbot.org. Available at: <http://gardenbot.org/about/> [Accessed 17 Apr. 2014].
+			
+Ganapati, P., 2010. GardenBot Brings Geek Power to Green Thumbs | Gadget Lab | WIRED. [online] WIRED. Available at: <http://www.wired.com/2010/08/gardenbot-gardening/> [Accessed 17 Apr. 2014].
+			
+Grossman, E., 2006. Where computers go to die — and kill. [online] Salon.com. Available at: <http://www.salon.com/2006/04/10/ewaste/> [Accessed 17 Apr. 2014].
+			
+Iseman, L., 2013. Blog | growerbot. [online] Growerbot.com. Available at: <http://www.growerbot.com/blog/> [Accessed 17 Apr. 2014].
+			
+Smart Citizen. 2014. [online] Smartcitizen.me. Available at: <http://www.smartcitizen.me> [Accessed 17 Apr. 2014].
+			
+StEP E-waste World Map - Overview Canada - STEP. 2014. [online] Step-initiative.org. Available at: <http://step-initiative.org/index.php/Overview_Canada.html> [Accessed 17 Apr. 2014].
+			
+Sui, D. and Elwood, S., 2013. Crowdsourcing geographic knowledge. 1st ed. Dordrecht [etc.]: Springer.
+			
+The Smart Citizen Kit: Crowdsourced Environmental Monitoring. 2014. [online] Kickstarter. Available at: <https://www.kickstarter.com/projects/acrobotic/the-smart-citizen-kit-crowdsourced-environmental-m> [Accessed 17 Apr. 2014].
+			
+Wath, S., Dutt, P. and Chakrabarti, T., 2011. E-waste scenario in India, its management and implications. Environmental monitoring and assessment, 172(1-4), pp.249--262.
