@@ -13,7 +13,7 @@ There a number of projects already in existence that purport to address exactly 
  
 Before reviewing individual projects, however, it may be prudent to briefly describe what researchers in citizen science call “the typology of participation”. According to Sui and Elwood in “Crowdsourcing Geographic Knowledge”, there exists four levels of participation in citizen science activities. 
 
-![alt text](img/1.png){: style="float: left"}
+![alt text](img/1.png)
 
 Sui and Elwood identify 4 different levels of involvement of citizen scientists. These range from passive distribution of computing / sensing / funding (i.e. ‘crowdsourcing’) to direct collaboration and engagement with the scientific process. The majority of the projects outlined here fall  within the first two levels of engagement -- however, this should not be interpreted as an inability for citizen scientists to participate in environmental sensing projects at higher levels.  While there are many ecological sensing projects worthy of examination, to list them all would be well outside the scope of this paper -- therefore only a select few are outlined here. It should also be noted that, while there exists a large number of commercial sensors already on the market, this paper does not regard them for a number of reasons. The most obvious reason being cost. The most important reason, however, being that the “closed” nature of these devices does not possibly allow for them to be reconstructed using recycled materials, thus completely negating the second premise of this research (which will be later detailed).
 
