@@ -46,7 +46,15 @@ The irony of producing e-waste to develop environmental sensors is not lost on t
 The intended final application of this project is an agricultural sensor grid spaced throughout a local crop-field. To begin with, three important growing variables for most crops are considered -- the amount of light received, the local temperature and the local soil-moisture (i.e. conductivity). Therefore, three separate sensors must be developed -- a light-meter, a thermometer and a conductivity sensor. 
 
 #### Light Meter
-A new light meter is priced at around $6 (Adafruit Industries, 2014). While this is perfectly sensible for a single meter, scaling into the hundreds is not feasible. However, electronic waste is rife with photoresistors which can be used as rudimentary luminosity  sensors. However, a reading from a photoresistor will not be in the standard measurement of light (lumens) -- and we therefore must calibrate any photoresistor that we use for this purpose. Calibration can be accomplished by measuring the voltage across a photoresistor as a light source provides different levels of light -- and then compared to a calibrated light meter. Because lab-grade light-meters are not particularly readily available, a simple solution is to use the light-meter that most smart-phone devices are now endowed with. Using a three-level desk lamp as a light source and Sensor Logger by i-RealitySoft on a Samsung Galaxy Note 2 smart-phone, a simple photoresistor circuit (see appendix A) was calibrated to respond with acceptable accuracy. To do so, the average luminosity was plotted against the reading from our photoresistor and a near-linear relationship of lux = 5.3*
+![alt text](img/5.png)
+
+A new light meter is priced at around $6 (Adafruit Industries, 2014). While this is perfectly sensible for a single meter, scaling into the hundreds is not feasible. However, electronic waste is rife with photoresistors which can be used as rudimentary luminosity  sensors. However, a reading from a photoresistor will not be in the standard measurement of light (lumens) -- and we therefore must calibrate any photoresistor that we use for this purpose. 
+
+![alt text](img/6.png)
+
+![alt text](img/7.png)
+
+Calibration can be accomplished by measuring the voltage across a photoresistor as a light source provides different levels of light -- and then compared to a calibrated light meter. Because lab-grade light-meters are not particularly readily available, a simple solution is to use the light-meter that most smart-phone devices are now endowed with. Using a three-level desk lamp as a light source and Sensor Logger by i-RealitySoft on a Samsung Galaxy Note 2 smart-phone, a simple photoresistor circuit (see appendix A) was calibrated to respond with acceptable accuracy. To do so, the average luminosity was plotted against the reading from our photoresistor and a near-linear relationship of lux = 5.3*
 (lx/(unit/3v))*
 (resistor)-
 2401.5 lx 
